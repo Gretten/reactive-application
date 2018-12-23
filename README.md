@@ -1,1 +1,3 @@
-Hello! This is my first React App.
+# Declaration
+
+This is the learning React App project. 
