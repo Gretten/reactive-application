@@ -14,17 +14,17 @@ const App = () => {
     // так как React - View-библиотека
 
     const dumbData = [
-        {label: 'Изучить Реакт!', important: true},
-        {label: 'Создать потрясающее (или не очень) приложение!', important: false},
-        {label: 'Создать еще более потрясающее приложение!', important: false},
+        { label: 'Learn React!', important: true, id: 1, },
+        { label: 'Create some fantastic (or not) reactive app!', important: false, id: 2, },
+        { label: 'And create another!', important: false, id: 3, },
     ]
 
     return (
-    <div>
-        <AppHeader />
-        <SearchPanel />
-        <TodoList dump={dumbData} />
-    </div>
+        <div>
+            <AppHeader />
+            <SearchPanel />
+            <TodoList dump={dumbData} />
+        </div>
     );
 };
 
