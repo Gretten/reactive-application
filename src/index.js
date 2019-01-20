@@ -1,34 +1,33 @@
-// Библиотеки
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// Компоненты
 import AppHeader from './components/app-header';
-import SearchPanel from './components/app-search-panel';
+import SearchPanel from './components/search-panel';
 import TodoList from './components/todo-list';
+import ItemStatusFilter from './components/item-status-filter';
 
-// Код приложения
+import './index.css';
+
 const App = () => {
 
-    // Фейковые данные, которые в идеале должны содержаться где-то еще, 
-    // так как React - View-библиотека
+  const todoData = [
+    { label: 'Drink Coffee', important: false, id: 1 },
+    { label: 'Make Awesome App', important: true, id: 2 },
+    { label: 'Have a lunch', important: false, id: 3 }
+  ];
 
-    const dumbData = [
-        { label: 'Learn React!', important: true, id: 1, },
-        { label: 'Create some fantastic (or not) reactive app!', important: false, id: 2, },
-        { label: 'And create another!', important: false, id: 3, },
-    ]
+  return (
+    <div className="todo-app">
+      <AppHeader toDo={1} done={3} />
+      <div className="top-panel d-flex">
+        <SearchPanel />
+        <ItemStatusFilter />
+      </div>
 
-    return (
-        <div>
-            <AppHeader />
-            <SearchPanel />
-            <TodoList dump={dumbData} />
-        </div>
-    );
+      <TodoList todos={todoData} />
+    </div>
+  );
 };
 
-ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-);
+ReactDOM.render(<App />,
+  document.getElementById('root'));
